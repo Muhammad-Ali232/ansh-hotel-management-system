@@ -27,31 +27,31 @@ It provides secure authentication, room management, booking features, profile ma
 
 ## 🏠 Home Page
 
-![Home](./screenshots/home.png)
+![Home](./screenshots/home.PNG)
 
 ---
 
 ## 🔐 Login Page
 
-![Login](./screenshots/login.png)
+![Login](./screenshots/login.PNG)
 
 ---
 
 ## 🛏 Room Listing
 
-![Room](./screenshots/room.png)
+![Room](./screenshots/room.PNG)
 
 ---
 
 ## 🏨 Room Detail
 
-![Room Detail](./screenshots/room-detail.png)
+![Room Detail](./screenshots/room-detail.PNG)
 
 ---
 
 ## 📊 Admin Dashboard
 
-![Admin Dashboard](./screenshots/admin-dashboard.png)
+![Admin Dashboard](./screenshots/admin-dashboard.PNG)
 
 ---
 
