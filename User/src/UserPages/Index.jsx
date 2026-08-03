@@ -3,6 +3,13 @@ import UserHeader from '../Shared/UserHeader'
 import UserFooter from '../Shared/UserFooter'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import WhyChooseUs from './WhyChooseUs';
+import HeroSection from "./HomeComponents/HeroSection";
+import TrustedBrands from './HomeComponents/TrustedBrands';
+import FeaturedRooms from './HomeComponents/FeaturedRooms';
+import PremiumServices from './HomeComponents/PremiumServices';
+import BookingCTA from './HomeComponents/BookingCTA';
+
 
 function Index() {
 
@@ -97,7 +104,7 @@ const handleHeaderBookNow = async () => {
  <div>
     <UserHeader onBookNowClick={handleHeaderBookNow} />
   {/* Hero Section Begin */}
-  <section className="hero-section">
+  {/* <section className="hero-section">
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
@@ -105,7 +112,7 @@ const handleHeaderBookNow = async () => {
             <h1>Ansh A Luxury Hotel</h1>
             <p>Here are the best hotel booking sites, including recommendations for international
               travel and for finding low-priced hotel rooms.</p>
-            <a href="#" className="primary-btn">Discover Now</a>
+            <a href="#" className="primary-btn">Book Your Stay</a>
           </div>
         </div>
         <div className="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
@@ -191,8 +198,12 @@ const handleHeaderBookNow = async () => {
     style={{ backgroundImage: "url(/UserAssets/img/hero/hero-3.jpg)" }}>
     </div>
 </div>
-  </section>
+  </section> */}
+  <HeroSection />
   {/* Hero Section End */}
+  
+  <TrustedBrands />
+
 
   {/* Room Search Modal */}
 
@@ -237,7 +248,7 @@ const handleHeaderBookNow = async () => {
 
 
   {/* About Us Section Begin */}
-  <section className="aboutus-section spad">
+  {/* <section className="aboutus-section spad">
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
@@ -268,130 +279,25 @@ const handleHeaderBookNow = async () => {
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
+  {/* About Us Section Begin */}
+
+<WhyChooseUs />
+
+{/* About Us Section End */}
   {/* About Us Section End */}
   {/* Services Section End */}
- <section className="services-section spad">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="section-title">
-              <span>What We Do</span>
-              <h2>Discover Our Services</h2>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          {services.map((service, index) => (
-            <div className="col-lg-4 col-sm-6" key={index}>
-              <div className="service-item">
-
-                {/* <i className="flaticon-036-parking" /> */}
-
-                <h4>{service.serviceName}</h4>
-                <p>{service.serviceDescription}</p>
-
-                <span className="service-price">
-                  {service.servicePrice}
-                </span>
-
-              </div>
-            </div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-    <hr/>
+ 
+ <PremiumServices services={services} />
+    {/* <hr/> */}
 
   {/* Services Section End */}
  {/* Home Room Section Begin */}
-<section className="hp-room-section spad">
-  {/* HEADING ADDED */}
-  <div className="container">
-    <div className="section-title">
-      <h2>Our Rooms</h2>
-      <span>Choose your perfect stay from our luxury rooms</span>
-    </div>
-  </div>
-  <div className="container-fluid">
-    <div className="hp-room-items ">
-      <div className="row">
-
-        {rooms.slice(0, 4).map((room) => (
-          <div className="col-lg-3 col-md-6" key={room._id}>
-
-            <div
-              className="hp-room-item set-bg"
-              style={{
-                backgroundImage: `url(${room.roomPic})`
-              }}
-            >
-
-              <div className="hr-text">
-
-                {/* ROOM NAME (same as HTML style) */}
-                <h3>{room.name}</h3>
-
-                {/* PRICE */}
-                <h2>
-                  ${room.price}
-                  <span>/Per night</span>
-                </h2>
-
-                {/* STATIC TABLE STYLE (HTML SAME STRUCTURE) */}
-                <table>
-                  <tbody>
-                    <tr>
-                      <td className="r-o">Size:</td>
-                      <td>{room.size}</td>
-                    </tr>
-                    <tr>
-                      <td className="r-o">Capacity:</td>
-                      <td>{room.capacity}</td>
-                    </tr>
-                    <tr>
-                      <td className="r-o">Bed:</td>
-                      <td>{room.bed}</td>
-                    </tr>
-                    <tr>
-                      <td className="r-o">Services:</td>
-                      <td>{room.services}</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                {/* BUTTON */}
-                <Link to={`/roomdetail/${room._id}`} className="primary-btn">
-                  More Details
-                </Link>
-
-              </div>
-
-            </div>
-
-          </div>
-        ))}
-
-      </div>
-
-      {/* MORE ROOMS BUTTON */}
-      {rooms.length > 4 && (
-  <div className="more-rooms-wrapper">
-    <Link to="/room" className="primary-btn more-rooms-btn">
-      More Rooms
-    </Link>
-  </div>
-)}
-
-    </div>
-  </div>
-</section>
+<FeaturedRooms rooms={rooms} />
 {/* Home Room Section End */}
   {/* Testimonial Section Begin */}
  {/* Testimonials Section (React-friendly) */}
-<div className="testimonial-section spad">
+{/* <div className="testimonial-section spad">
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
@@ -428,7 +334,17 @@ const handleHeaderBookNow = async () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
+
+<BookingCTA
+    form={form}
+    setForm={setForm}
+    handleSearch={handleSearch}
+    hover={hover}
+    setHover={setHover}
+/>
+
+
   {/* Testimonial Section End */}
   <UserFooter/>
 </div>

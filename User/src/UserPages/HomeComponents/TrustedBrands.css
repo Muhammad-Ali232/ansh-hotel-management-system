@@ -1,0 +1,225 @@
+/*=====================================
+        TRUST SECTION
+======================================*/
+
+.tb-section{
+
+    padding:90px 0;
+
+    background:#fff;
+
+    overflow:hidden;
+
+}
+
+.tb-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.tb-heading span{
+
+    color:#dfa974;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.tb-heading h2{
+
+    font-size:44px;
+
+    margin:15px 0;
+
+    color:#111827;
+
+}
+
+.tb-heading p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#777;
+
+}
+
+/*=====================================
+            SLIDER
+======================================*/
+
+.tb-slider{
+
+    width:100%;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.tb-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    width:max-content;
+
+    animation:tbMarquee 30s linear infinite;
+
+}
+
+.tb-slider:hover .tb-track{
+
+    animation-play-state:paused;
+
+}
+
+/*=====================================
+            CARD
+======================================*/
+
+.tb-card{
+
+    flex:0 0 240px;
+
+    height:150px;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:1px solid #eee;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.05);
+
+    transition:.4s;
+
+}
+
+.tb-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#dfa974;
+
+    box-shadow:0 20px 50px rgba(223,169,116,.18);
+
+}
+
+.tb-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#dfa974;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+    transition:.4s;
+
+}
+
+.tb-card:hover .tb-icon{
+
+    transform:rotate(10deg) scale(1.1);
+
+}
+
+.tb-card h4{
+
+    font-size:18px;
+
+    color:#111827;
+
+    margin:0;
+
+}
+
+/*=====================================
+            ANIMATION
+======================================*/
+
+@keyframes tbMarquee{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/*=====================================
+        RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+.tb-heading h2{
+
+font-size:32px;
+
+}
+
+.tb-card{
+
+flex:0 0 180px;
+
+height:120px;
+
+}
+
+.tb-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:24px;
+
+}
+
+.tb-card h4{
+
+font-size:15px;
+
+}
+
+}
